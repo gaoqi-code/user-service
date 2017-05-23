@@ -45,6 +45,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserById(int userId) {
+        return userDao.getUserById(userId);
+    }
+
+    @Override
     public int updateUserBalance(int userId,BigDecimal totalFee,int dataType,String dataDesc,boolean isJia){
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("userId",userId);

@@ -17,6 +17,10 @@
 		SELECT id,unionid,openid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM j_user WHERE id =#{parentId} AND data_status = 2
 	</select>
 
+	<select id="getUserById" parameterType="int"  resultType="com.hiveview.entity.User">
+		SELECT id,unionid,openid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM j_user WHERE id =#{userId} AND data_status = 2
+	</select>
+
 
 	<update id="updateUserJianBalance">
 		UPDATE j_user SET balance = balance - #{totalFee} WHERE id = #{userId}

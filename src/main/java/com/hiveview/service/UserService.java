@@ -18,6 +18,9 @@ public interface UserService {
 
     public User getUserByParentId(int parentId);
 
+    public User getUserById(int userId);
+
+
     public  int updateUserBalance(int userId,BigDecimal totalFee,int dataType,String dataDesc,boolean isJia);
 
 }

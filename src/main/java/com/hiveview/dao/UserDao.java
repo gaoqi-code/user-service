@@ -36,4 +36,6 @@ public interface UserDao extends IBaseDao<User> {
 	public int addUserBalanceLog(Map<String,Object> map);
 //		return this.delByIf("UserDao.addUserBalanceLog",map);
 //	}
+
+	public User getUserById(@Param("userId")int userId);
 }
