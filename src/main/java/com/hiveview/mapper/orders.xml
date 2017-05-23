@@ -36,4 +36,8 @@
         WHERE user_id = #{userId} AND data_status = 100 AND data_type = 2 LIMIT 1;
     </select>
 
+    <select id="getBalanceDetailsByUserId" parameterType="map"  resultType="map">
+
+    </select>
+
 </mapper>

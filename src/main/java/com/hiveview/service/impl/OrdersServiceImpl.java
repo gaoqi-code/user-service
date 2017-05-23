@@ -2,6 +2,7 @@ package com.hiveview.service.impl;
 
 
 import com.hiveview.dao.OrdersDao;
+import com.hiveview.entity.BalanceDetail;
 import com.hiveview.entity.Orders;
 import com.hiveview.service.OrdersService;
 import com.hiveview.util.OrderUtil;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by gonglixun on 2017/2/8.
@@ -77,5 +80,10 @@ public class OrdersServiceImpl implements OrdersService {
         hongBao.setDataType(0);
         hongBaoDao.addHongBao(hongBao);*/
         return 1;
+    }
+
+    @Override
+    public List<BalanceDetail> getBalanceDetailsByUserId(Map<String,Object> map) {
+        return null;
     }
 }

@@ -1,11 +1,13 @@
 package com.hiveview.dao;
 
+import com.hiveview.entity.BalanceDetail;
 import com.hiveview.entity.Orders;
 import com.hiveview.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -31,8 +33,8 @@ public interface OrdersDao extends IBaseDao<Orders> {
 
 	/**
 	 * 查询出入金记录
-	 * @param orderNo
+	 * @param map
 	 * @return
 	 */
-	public Map<String,Object> getBalanceDetailsByUserId(@Param("userId")int userId);
+	public List<BalanceDetail> getBalanceDetailsByUserId(Map<String,Object> map);
 }
