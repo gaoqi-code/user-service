@@ -28,4 +28,11 @@ public interface OrdersDao extends IBaseDao<Orders> {
 	public Orders getOrderByOrderNo(@Param("orderNo")String orderNo);
 
 	public Orders getOrderByUserId(@Param("userId")int userId);
+
+	/**
+	 * 查询出入金记录
+	 * @param orderNo
+	 * @return
+	 */
+	public Map<String,Object> getBalanceDetailsByUserId(@Param("userId")int userId);
 }
