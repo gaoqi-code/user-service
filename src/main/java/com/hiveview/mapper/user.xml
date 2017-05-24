@@ -5,6 +5,27 @@
 
 <mapper namespace="com.hiveview.dao.UserDao">
 
+	<resultMap id="BaseResultMap" type="com.hiveview.entity.User" >
+		<id column="id" property="id" />
+		<result column="openid" property="openid" />
+		<result column="unionid" property="unionid" />
+		<result column="nick_name" property="nickName"  />
+		<result column="user_icon" property="userIcon"  />
+		<result column="add_time" property="addTime"  />
+		<result column="update_time" property="updateTime" />
+		<result column="data_status" property="dataStatus" />
+		<result column="parent_id" property="parentId"  />
+		<result column="balance" property="balance"  />
+		<result column="level" property="level"  />
+		<result column="agent_id" property="agentId"  />
+		<result column="pass_word" property="passWord" />
+	</resultMap>
+
+	<sql id="Base_Column_List" >
+		id, openid, unionid, nick_name, user_icon, add_time, update_time, data_status, parent_id,
+		balance, level, agent_id, pass_word
+	</sql>
+
 	<insert id="addUser"  parameterType="com.hiveview.entity.User" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO j_user (openid,unionid,add_time,update_time,parent_id,level,agent_id,data_status,balance) VALUES(#{openid},#{unionid},NOW(),NOW(),#{parentId},#{level},#{agentId},2,0)
 	</insert>
@@ -17,8 +38,11 @@
 		SELECT id,unionid,openid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM j_user WHERE id =#{parentId} AND data_status = 2
 	</select>
 
-	<select id="getUserById" parameterType="int"  resultType="com.hiveview.entity.User">
-		SELECT id,unionid,openid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM j_user WHERE id =#{userId} AND data_status = 2
+	<select id="getUserById" parameterType="int"  resultMap="BaseResultMap">
+	  select
+		<include refid="Base_Column_List" />
+	  from j_user
+	  where id = #{userId}
 	</select>
 
 

@@ -19,6 +19,8 @@ public class User {
     private int parentId;
     private BigDecimal balance;
     private int agentId;
+    private int level;
+    private String passWord;
 
     public String getUnionid() {
         return unionid;
@@ -35,8 +37,6 @@ public class User {
     public void setDataStatus(int dataStatus) {
         this.dataStatus = dataStatus;
     }
-
-    private int level;
 
     public int getId() {
         return id;
@@ -116,5 +116,13 @@ public class User {
 
     public void setAgentId(int agentId) {
         this.agentId = agentId;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 }

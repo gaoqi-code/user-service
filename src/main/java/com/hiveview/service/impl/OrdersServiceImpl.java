@@ -83,7 +83,7 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     @Override
-    public List<BalanceDetail> getBalanceDetailsByUserId(Map<String,Object> map) {
-        return null;
+    public List<Orders> getOrdersByUserId(int userId) {
+        return ordersDao.getOrdersByUserId(userId);
     }
 }
