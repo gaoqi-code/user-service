@@ -63,4 +63,9 @@ public class UserServiceImpl implements UserService {
             return userDao.updateUserJianBalance(userId,totalFee);
         }
     }
+
+    @Override
+    public void updateUserPassWord(String pass, int userId) {
+        userDao.updateUserPassWord(pass,userId);
+    }
 }

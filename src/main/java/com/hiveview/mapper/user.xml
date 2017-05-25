@@ -50,6 +50,10 @@
 		UPDATE j_user SET balance = balance - #{totalFee} WHERE id = #{userId}
 	</update>
 
+	<update id="updateUserPassWord">
+		UPDATE j_user SET pass_word =#{pass} WHERE id = #{userId}
+	</update>
+
 	<update id="updateUserJiaBalance">
 		UPDATE j_user SET balance = balance + #{totalFee} WHERE id = #{userId}
 	</update>

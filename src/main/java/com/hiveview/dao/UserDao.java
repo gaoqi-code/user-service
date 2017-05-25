@@ -38,4 +38,7 @@ public interface UserDao extends IBaseDao<User> {
 //	}
 
 	public User getUserById(@Param("userId")int userId);
+
+	public int updateUserPassWord(@Param("pass")String pass,@Param("userId")int userId);
+
 }

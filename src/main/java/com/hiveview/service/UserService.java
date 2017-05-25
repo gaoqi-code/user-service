@@ -23,4 +23,6 @@ public interface UserService {
 
     public  int updateUserBalance(int userId,BigDecimal totalFee,int dataType,String dataDesc,boolean isJia);
 
+    public void updateUserPassWord(String pass,int userId);
+
 }
